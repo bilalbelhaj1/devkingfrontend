@@ -107,11 +107,11 @@ const Course = () => {
           <div className="hero-course-container">
             <div className="hero-course-info">
               <div className='hero-course-cover'>
-                <img className='hero-course-cover-img' src={`https://devkingsbackend-production-3753.up.railway.app/${data.thubnail}` || heroCourse} alt="" />
+                <img className='hero-course-cover-img' src={`https://devkingsbackend-production-3753.up.railway.app/${data.thumbnail}` || heroCourse} alt="" />
                 <div className='hero-cover-info-shape'>
                   <div className="hero-cover-info-tea">
                     <div className='students-profile-card-head'>
-                      <img src={data.teacherId.avatar || imgUser} alt="" />
+                      <img src={data.teacherId.profilePic || imgUser} alt="" />
                       <div>
                         <h1>{data.teacherId.firstName + ' ' + data.teacherId.lastName}</h1>
                         <p><span>{data.teacherId.publisher}, </span><span>{data.category}</span></p>

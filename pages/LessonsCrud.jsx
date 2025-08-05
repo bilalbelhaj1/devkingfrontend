@@ -73,7 +73,7 @@ const LessonsCrud = () => {
               {lessonsData.map(lesson => (
                 <tr key={lesson.id}>
                   <td>
-                    <img src={lesson.thumbnail} alt={lesson.title} className="user-avatar" />
+                    <img src={`https://devkingsbackend-production-3753.up.railway.app/api/admin/courses/${lesson.thumbnail}`} alt={lesson.title} className="user-avatar" />
                   </td>
                   <td>{lesson.id}</td>
                   <td>{lesson.title}</td>

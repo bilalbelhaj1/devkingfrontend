@@ -6,7 +6,7 @@ const Course = ({ course }) => {
     <div className="xCrdr_928">
       <img
         className="xImg_c1"
-        src={`https://terrific-determination-production-cf17.up.railway.app/${course.thumbnail}`}
+        src={`https://devkingsbackend-production-3753.up.railway.app/${course.thumbnail}`}
         alt="Course Thumbnail"
       />
       <div className="xBody_329">

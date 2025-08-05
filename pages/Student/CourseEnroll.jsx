@@ -52,6 +52,8 @@ const CourseEnroll = () => {
   const handleEnrollClick = async (e) => {
     e.preventDefault();
   const token = localStorage.getItem('accessToken');
+  const user = localStorage.getItem('user')
+  console.log(user);
   console.log("hello")
   if (!token) {
     navigate('/login'); 
@@ -60,6 +62,7 @@ const CourseEnroll = () => {
 
   setLoading(true);
   try {
+    console.log(courseId)
     const res = await fetch(`https://devkingsbackend-production-3753.up.railway.app/api/student/is-enrolled/${courseId}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -67,12 +70,14 @@ const CourseEnroll = () => {
       },
       credentials: 'include'
     });
-
     const data = await res.json();
     console.log(data);
+    
     if (data.enrolled) {
+      console.log("enrolled");
       navigate(`/course/${courseId}`);
     } else {
+      console.log(courseId)
       const res = await fetch(`https://devkingsbackend-production-3753.up.railway.app/api/student/stripe/create-checkout-session/${courseId}`, {
         method: 'POST',
         headers: {

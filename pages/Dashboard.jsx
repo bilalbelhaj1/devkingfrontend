@@ -232,7 +232,7 @@ const Dashboard = () => {
             <ul>
               {topLearners.map((item, i) => (
                 <li key={i}>
-                  <div className="list-img"><img src={item.profilePic} alt="" /></div>
+                  <div className="list-img"><img style={{width:'50px', height:'50px', borderRadius:'50%'}} src={item.profilePic} alt="" /></div>
                   <div><p>{item.name}</p><small>{item.totalLessons} lessons</small></div>
                 </li>
               ))}
@@ -244,7 +244,7 @@ const Dashboard = () => {
             <ul>
               {topTeachers.map((item, i) => (
                 <li key={i}>
-                  <div className="list-img"><img src={item.profilePic} alt="" /></div>
+                  <div className="list-img"><img style={{width:'50px', height:'50px', borderRadius:'50%'}} src={item.profilePic} alt="" /></div>
                   <div><p>{item.name}</p><small>{item.enrollments} enrollments</small></div>
                 </li>
               ))}
@@ -256,7 +256,9 @@ const Dashboard = () => {
             <ul>
               {topCourses.map((item, i) => (
                 <li key={i}>
-                  <div className="list-img"></div>
+                  <div className="list-img">
+                    <img style={{width:'50px', height:'50px', borderRadius:'50%'}}  src={`https://devkingsbackend-production-3753.up.railway.app/${item.thumbnail}`} alt="" />
+                  </div>
                   <div><p>{item.title}</p><small>{item.enrollments} enrollments</small></div>
                 </li>
               ))}

@@ -98,7 +98,7 @@ const Users = () => {
   };
 
   const handleDelete = async (user) => {
-    const response = await fetch(`http://localhost:5000/api/admin/users/deleteUser/${user._id}`, {
+    const response = await fetch(`https://devkingsbackend-production-3753.up.railway.app/api/admin/users/deleteUser/${user._id}`, {
       method:'DELETE',
       headers:{
         'Content-Type':'Application/json'

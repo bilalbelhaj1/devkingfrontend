@@ -10,7 +10,7 @@ const PaymentSuccess = () => {
     const enroll = async () => {
       const token = localStorage.getItem('accessToken');
       try {
-        await fetch(`https://devkingsbackend-production-3753.up.railway.app/api/student/tutorials/:${courseId}/enroll`, {
+        await fetch(`https://devkingsbackend-production-3753.up.railway.app/api/student/tutorials/${courseId}/enroll`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
