@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #0c0c0c;
+  --accent-color: #f0f0f0;
+  --light-bg: #f9f9f9;
+  --hover-color: #1a1a1a;
+}
+
+.section-teachers {
+  width: 80%;
+  margin: 20px 0;
+}
+
+.section-courses {
+  width: 80%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-students {
+  width: 80%;
+  margin: 20px 0;
+}
+
+.section-teachers h1 {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 500;
+  color: #0c0c0c;
+}
+
+.section-courses h1 {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 500;
+  color: #0c0c0c;
+}
+
+.section-students h1 {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 500;
+  color: #0c0c0c;
+}
+
+.courses-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 20px;
+}
+
+.category-container {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-container button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: #0c0c0c;
+  color: #F0F8FF;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.category-container button:hover {
+  background: var(--hover-color);
+}
+
+.teachers-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 68px;
+}
+
+.section-students .sub-title {
+  font-size: 30px;
+  font-weight: 300;
+  padding: 40px 0;
+}
+
+.section-students .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 68px;
+}
+
+.view-all {
+  width: 264px;
+  height: 90px;
+  background-color: #0c0c0c;
+  color: #f0f8ff;
+  font-size: 25px;
+  padding: 10px;
+  border: none;
+  border-radius: 14px;
+  margin: 40px 0;
+  cursor: pointer;
+  font-weight: 500;
+}

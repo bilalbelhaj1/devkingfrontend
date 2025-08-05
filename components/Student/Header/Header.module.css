@@ -1,0 +1,85 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 21px 0;
+}
+
+nav {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+}
+
+.navList {
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList li .linkNav {
+  color: #0c0c0c;
+  font-size: 20px;
+}
+
+.auth {
+  font-size: 20px;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth .register {
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 14px;
+  background-color: #0c0c0c;
+  color: #F0F8FF;
+}
+
+.auth .login {
+  padding: 15px;
+  background-color: #F0F8FF;
+  color: #0c0c0c;
+  border: 3px solid #0c0c0c;
+  border-radius: 14px;
+}
+.logoutContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.logoutContainer li{
+  padding: 0 0 0 20px;
+  background: #6f6a6a2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 20px;
+}
+.logoutContainer li span{
+  background: rgb(83, 139, 224);
+  margin-left: 10px;
+  padding: 0 10px;
+  height: 100%;
+  border-radius: 20px;
+  color: #F0F8FF;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.logout{
+  padding: 15px;
+  border-radius: 14px;
+  background: red;
+  color: #F0F8FF;
+  font-size: 19px;
+  font-weight: 600;
+  border: none;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
