@@ -26,38 +26,56 @@ import TeacherProfile from '../pages/Student/TeacherProfile'
 import Course from '../pages/Student/Course'
 import CourseEnroll from '../pages/Student/CourseEnroll'
 import PaymentSuccess from '../pages/Student/PaymentSuccess'
+import RoleBasedRouteProtector from '../components/Roles/RoleBasedRouteProtector'
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/admin/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
-        <Route path="/admin/courses-crud" element={<ProtectedRoute><CoursesCrud /></ProtectedRoute>} />
-        <Route path="/admin/lessons-crud" element={<ProtectedRoute><LessonsCrud /></ProtectedRoute>} />
+        <Route path="/admin/dashboard" element={
+  <RoleBasedRouteProtector allowedRoles={['admin']}>
+    <Dashboard />
+  </RoleBasedRouteProtector>
+} />
+<Route path="/admin/users" element={
+  <RoleBasedRouteProtector allowedRoles={['admin']}>
+    <Users />
+  </RoleBasedRouteProtector>
+} />
+<Route path="/admin/courses-crud" element={
+  <RoleBasedRouteProtector allowedRoles={['admin']}>
+    <CoursesCrud />
+  </RoleBasedRouteProtector>
+} />
+<Route path="/admin/lessons-crud" element={
+  <RoleBasedRouteProtector allowedRoles={['admin']}>
+    <LessonsCrud />
+  </RoleBasedRouteProtector>
+} />
         <Route path='/admin/login' element={<AdminLogin />} />
 
-
-        <Route path='/teacher/dashboard' element={
-          <ProtectedRoute>
-            <TeacherDashboard/>
-          </ProtectedRoute>
-        }/>
-        {/* <Route path='/teacher/profile' element={
-          <ProtectedRoute><TeacherProfilePage/></ProtectedRoute>
-        }/> */}
-        <Route path='/teacher/addCourse' element={
-          <ProtectedRoute>
-            <AddCoursePage/>
-          </ProtectedRoute>
-        }/>
-          <Route path="/teacher/course/:courseId" element={<ProtectedRoute>
-            <EditCoursePage/>
-          </ProtectedRoute>} />
-          <Route path='/teacher/courses' element={<ProtectedRoute>
-            <TeacherCourses/>
-          </ProtectedRoute>}/>
+                    <Route path="/teacher/course/:courseId" element={
+  <RoleBasedRouteProtector allowedRoles={['teacher']}>
+    <EditCoursePage/>
+  </RoleBasedRouteProtector>
+} />
+          
+          <Route path="/teacher/dashboard" element={
+  <RoleBasedRouteProtector allowedRoles={['teacher']}>
+    <TeacherDashboard />
+  </RoleBasedRouteProtector>
+} />
+<Route path="/teacher/addCourse" element={
+  <RoleBasedRouteProtector allowedRoles={['teacher']}>
+    <AddCoursePage />
+  </RoleBasedRouteProtector>
+} />
+<Route path="/teacher/courses" element={
+  <RoleBasedRouteProtector allowedRoles={['teacher']}>
+    <TeacherCourses />
+  </RoleBasedRouteProtector>
+} />
 
 
         <Route path="/course" element={<Courses />} />
@@ -66,14 +84,6 @@ function App() {
         <Route path="/student" element={<StudentProfile />} />
         <Route path="/teacher" element={<TeacherProfile />} />
         <Route path="/payment-success/:courseId" element={<PaymentSuccess />} />
-        <Route
-          path='/test'
-          element={
-            <ProtectedRoute>
-              <Test />
-            </ProtectedRoute>
-          }
-        />
         <Route path='/course_no' element={<Course />} />
         <Route path='/course_enroll/:courseId' element={<CourseEnroll />} />
         <Route path='/enrolled' element={<EnrolledCourses />} />
